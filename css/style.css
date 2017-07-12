@@ -71,3 +71,14 @@ h3{
 #screen2text{
 	display: none;
 }
+
+.image-upload > input
+{
+    display: none;
+}
+
+.image-upload img
+{
+    width: 80px;
+    cursor: pointer;
+}
