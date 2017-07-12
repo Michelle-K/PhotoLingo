@@ -15,6 +15,7 @@ h1{
 	color: white;
 	font-family: 'Ubuntu', sans-serif;
 	font-size: 2.0rem;
+	margin-top: 10%;
 }
 .md-form label{
 	font-size: 1.7rem;
@@ -52,4 +53,21 @@ input[type=text]:focus:not([readonly]){
 }
 input[type=text]{
 	font-size: 2rem;
+}
+
+#camera{
+	display:none;
+}
+
+h3{
+	color: white;
+	font-family: 'Ubuntu', sans-serif;
+	text-align: center;
+	padding-left: 5%;
+	padding-right: 5%;
+
+}
+
+#screen2text{
+	display: none;
 }
