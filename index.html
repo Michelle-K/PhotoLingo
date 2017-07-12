@@ -38,8 +38,14 @@
             <div class="flex-center flex-column" id="screen2">
                 <h3 id="screen2text"> Take a photo of something to begin </h3>
                 
-                <img class= "animated mb-2 screen2" id="camera" src="img/camera.png" alt="camera">
-                <input type="file" accept="image/*" capture="camera">
+                <div class="image-upload">
+                    <label for="file-input">
+                        <img class= "animated mb-2 screen2" id="camera" src="img/camera.png" alt="camera">
+                    </label>
+                    <input id="file-input" type="file" accept="image/*" capture="camera">
+                </div>
+
+                
             </div>
             <!-- END-Screen 2 -->
         </div>
