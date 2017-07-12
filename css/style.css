@@ -1,0 +1,55 @@
+/* YOUR CUSTOM STYLES */
+
+body{
+	background-color: #4AD9D9;
+	
+}
+
+
+
+.md-form.name{
+	width: 250px;
+}
+
+h1{
+	color: white;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 2.0rem;
+}
+.md-form label{
+	font-size: 1.7rem;
+	color: white;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+.form-control{
+	color: white;
+	
+}
+
+.form-control:focus{
+	border-color: white;
+}
+
+label.annimated.fadeIn.active{
+	color: white;
+}
+
+#rabbit{
+	width: 90%;
+}
+
+input[type=text]:focus:not([readonly]){
+	color: white;
+	border-bottom: 1px solid white;
+	font-size: 2rem;
+}
+#go{
+	left:77px;
+}
+.btn-rounded{
+	border-radius: 10em;
+}
+input[type=text]{
+	font-size: 2rem;
+}
