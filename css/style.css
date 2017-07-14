@@ -158,6 +158,10 @@ h3{
 	font-size: 2rem;
 }
 
+#spanishWord{
+	display: none;
+}
+
 /*NAVBAR*/
 .animate {
     	-webkit-transition: all 0.3s ease-in-out;
