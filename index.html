@@ -22,40 +22,115 @@
 
     <!-- Start your project here-->
     <div style="height: 100vh" >
-        <div class="flex-center flex-column">
-           <!-- Screen 1 -->
-            <h1 class="animated fadeIn mb-2 screen1">Let's learn Spanish!</h1>
+    
+    <!-- NAVBAR -->
+        <nav class="navbar navbar-fixed-left navbar-minimal animate animated fadeIn" role="navigation">
+                <div class="navbar-toggler animate">
+                    <span class="menu-icon"></span>
+                </div>
+                <ul class=" navbar-menu animate">
+                        <li><a href="#">Home</a></li>
+                        <li ><a href="#">Profile</a></li>
+                        <li ><a href="#">Messages</a></li>
+                        
+                        <li><a href="#">Home</a></li>
+                        <li ><a href="#">Profile</a></li>
+                        <li ><a href="#">Messages</a></li> 
+                </ul>
+        </nav>
+    <!-- END-NAVBAR -->
 
-            <img class= "animated fadeIn mb-2 screen1" id="rabbit" src="img/rabbit.png" alt="rabbit">
+   <!-- Screen 1 -->
+        <div class="flex-center flex-column screen1">
+        
+            <h1 class="animated fadeIn mb-2 screen1">Como Se Dice</h1>
+
+            <img class= "animated fadeIn mb-2 screen1" id="timHiBubble" src="img/timHiBubble.png" alt="rabbit">
 
             <div class="md-form name">
                 <input type="text" id="name" class="form-control" value="">
                 <label for="name" class="animated fadeIn">What is your name?</label>
                 <a id="go" class="btn btn-warning btn-rounded">GO!</a>
-        </div>
-            <!-- END-Screen 1 -->
-            <!-- Screen 2 -->
-            <h3 id="hi"></h3>
-            <div class="flex-center flex-column" id="screen2">
-                <h3 id="screen2text"> Take a photo of something to begin </h3>
-                
-                <div class="image-upload">
-                    <label for="file-input">
-                        <img class= "animated mb-2 screen2" id="camera" src="img/camera.png" alt="camera">
-                    </label>
-                    <input name="userImage" id="file-input" type="file" accept="image/*" capture="camera">
-                </div>  
             </div>
-            <!-- END-Screen 2 -->
+        </div>   
+    <!-- END-Screen 1 -->
+
+
+    <!-- Screen 2 -->
+        
+        <div id="screen2" class="screen2">
+            <h3 id="hi"></h3>   
+            
+            <div class="image-upload screen2">
+                <label class="p-2" for="file-input">
+                    <img class= "animated  screen2" id="camera" src="img/camera.png" alt="camera">
+                </label>
+                <input name="userImage" id="file-input" type="file" accept="image/*" capture="camera">
+            </div>
+            <div class="screen2" id="timArrowDiv">
+                <img class= "animated fadeIn mb-2 screen2" id="timArrow" src="img/timArrow.png" alt="timArrow">  
+                <h3 id="screen2text"> Take a photo of something to begin </h3>
+            </div>
+        </div>
+    <!-- END-Screen 2 -->
+    
+    <!-- Screen 3 -->          
+        <div id="image" class="screen3"></div> 
+        <div class="row screen3">        
+            <div class="col-md-6">
+
+                <!--WORD 1-->
+                <div id="word1" class="card card-primary text-center z-depth-2 animated">
+                    <div class="card-block">
+                        <p class="white-text">Word 1</p>
+                    </div>
+                </div>
+                <!--/.WORD1-->
+
+
+                <!--Word2-->
+                <div id="word2" class="card card-success text-center z-depth-2 animated">
+                    <div class="card-block">
+                        <p class="white-text">Word 2</p>
+                    </div>
+                </div>
+                <!--/.Word2-->
+
+            </div>
+
+            <div class="col-md-6">
+
+                <!--Word3-->
+                <div id="word3" class="card card-info text-center z-depth-2 animated">
+                    <div class="card-block">
+                        <p class="white-text">Word 3</p>
+                    </div>
+                </div>
+                <!--/.Word3-->
+
+                <!--Word 4-->
+                <div id="word4" class="card default-color text-center z-depth-2 animated">
+                    <div class="card-block">
+                        <p class="white-text">Word 4</p>
+                    </div>
+                </div>
+                <!--/.Word 4-->
+
+                <!--Spanish Word-->
+                <!-- <div id="word4" class="card default-color text-center z-depth-2 animated">
+                    <div class="card-block">
+                        <p class="white-text">Word 4</p>
+                    </div>
+                </div> -->
+                <!--/.Spanish Word-->
+
+            </div>
+        </div>
+        <p class="screen3" id="chooseWord">Choose one word to learn in Spanish</p>
             
 
-            <!-- Screen 3 -->
-            <img id="frame">
-
-
-
-            <!-- END-Screen 3 -->
-        </div>
+    <!-- END-Screen 3 -->
+        
     </div>
     <!-- /Start your project here-->
 
