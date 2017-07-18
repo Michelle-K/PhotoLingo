@@ -8,17 +8,20 @@ body{
     background: -o-linear-gradient(#FFFFFF, #9BC2D4); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(#FFFFFF, #9BC2D4); /* For Firefox 3.6 to 15 */
     background: linear-gradient(#FFFFFF, #9BC2D4); /* Standard syntax (must be last) */
-
+	font-size: 1.5rem;
+	font-family: 'Ubuntu', sans-serif;
 }
 
 
-
+.screen0{
+	display:none;
+}
 /*Name*/
 h1{
 	color: #446C7D;
 	font-family: 'Ubuntu', sans-serif;
 	font-size: 2.0rem;
-	margin-top: 25%;
+	margin-top: 20%;
 
 }
 /* What is your name*/
@@ -57,6 +60,34 @@ input[type=text]:focus:not([readonly]){
 	border-bottom: 1px solid #446C7D;
 	font-size: 2rem;
 }
+.mb-2{
+margin-bottom: 0;
+}
+
+
+
+/*img{border:solid 1px red; margin:10px;}*/
+.selected{
+   box-shadow:0px 12px 22px 1px #333;
+}
+#selectButton {
+	margin: 0 auto;
+	width: 60%; 
+	height: 30%;
+}
+.btn {
+    font-size: .8rem;
+    padding: .85rem 2.13rem;
+     border-radius: 2px; 
+    border: 0;
+    color: #fff!important;
+    margin: 0 auto; 
+    white-space: normal!important;
+}
+/*END AVATAR GRID*/
+
+
+
 
 /*Screen 2*/
 div .screen2.box{
@@ -141,7 +172,12 @@ h3{
     height: 250px; width: 250px;
     border: 1px solid #bbb;
     width: 100%;
+   /* transform: rotate(90deg);
+  	-webkit-transform: rotate(90deg);
+  	-ms-transform: rotate(90deg);*/
 }
+
+
 .screen3{
 	display: none;
 }
@@ -161,6 +197,8 @@ h3{
 #spanishWord{
 	display: none;
 }
+
+
 
 /*NAVBAR*/
 .animate {
