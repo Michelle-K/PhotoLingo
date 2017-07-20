@@ -193,9 +193,20 @@ h3{
 	font-family: 'Ubuntu', sans-serif;
 	font-size: 2rem;
 }
+#learnedWord{
+	display: none;
+	text-align: center;
+	color: #446C7D;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 2rem;
+}
 
 #spanishWord{
 	display: none;
+}
+#again{
+	display: none;
+	
 }
 
 

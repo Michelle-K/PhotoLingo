@@ -1,14 +1,14 @@
-var config = {
-    apiKey: "AIzaSyAUhckuI7eonmR3kNmUC3vBOrnoz2NLscY",
-    authDomain: "yeah-8ac6b.firebaseapp.com",
-    databaseURL: "https://yeah-8ac6b.firebaseio.com/",
-    projectId: "yeah-8ac6b",
-    storageBucket: "yeah-8ac6b.appspot.com",
-    messagingSenderId: "1051077492767"
-  };
-  var dataInt = firebase.initializeApp(config);
-  var database = firebase.database();
-  var app = firebase.initializeApp(config, "app");
+// var config = {
+//     apiKey: "AIzaSyAUhckuI7eonmR3kNmUC3vBOrnoz2NLscY",
+//     authDomain: "yeah-8ac6b.firebaseapp.com",
+//     databaseURL: "https://yeah-8ac6b.firebaseio.com/",
+//     projectId: "yeah-8ac6b",
+//     storageBucket: "yeah-8ac6b.appspot.com",
+//     messagingSenderId: "1051077492767"
+//   };
+//   var dataInt = firebase.initializeApp(config);
+//   var database = firebase.database();
+//   var app = firebase.initializeApp(config, "app");
 
 
 //NAVBAR
@@ -68,22 +68,25 @@ $("#go").on("click", function(){
 //When user uploads a photo
 $('input[name=userImage]').change(function(ev) {
 
-    alert("image received");
+
     $(".screen2").hide(2000);
     $(".screen3").show(2000);
+    $("#word3,#word2,#word1,#word4").show();
+    $("#word1,#word2,#word3,#word4").removeClass("slideOutLeft");
 });
-
+var urlI;
 //Image Results-Show image
 document.getElementById('file-input').addEventListener('change', readURL, true);
 function readURL(){
     var file = document.getElementById("file-input").files[0];
     var uploader = document.getElementById("file-input");
-    var storageRef = firebase.storage(app).ref(file.name);
-    storageRef.put(file);
+    // var storageRef = firebase.storage(app).ref(file.name);
+    // storageRef.put(file);
 
     var reader = new FileReader();
     reader.onloadend = function(){
-        document.getElementById('image').style.backgroundImage = "url(" + reader.result + ")";        
+    	urlI = "url(" + reader.result + ")";
+        document.getElementById('image').style.backgroundImage = urlI;        
     };
     if(file){
         reader.readAsDataURL(file);
@@ -92,24 +95,18 @@ function readURL(){
 }
 
 
-database.ref().set(null);
+// database.ref().set(null);
 
 
 
-database.ref().on("value", function(snapshot) {
-
-
-
-if (snapshot.val() !== null){
-$("#w1selected").html("<p id='w1selected' class='white-text'>" + snapshot.val().label1 + "</p>");
-$("#w2selected").html("<p id='w2selected' class='white-text'>" + snapshot.val().label2 + "</p>");
-$("#w3selected").html("<p id='w3selected' class='white-text'>" + snapshot.val().label3 + "</p>");
-$("#w4selected").html("<p id='w4selected' class='white-text'>" + snapshot.val().label4 + "</p>");
-}
-
-
-
-});
+// database.ref().on("value", function(snapshot) {
+// if (snapshot.val() !== null){
+// $("#w1selected").html("<p id='w1selected' class='white-text'>" + snapshot.val().label1 + "</p>");
+// $("#w2selected").html("<p id='w2selected' class='white-text'>" + snapshot.val().label2 + "</p>");
+// $("#w3selected").html("<p id='w3selected' class='white-text'>" + snapshot.val().label3 + "</p>");
+// $("#w4selected").html("<p id='w4selected' class='white-text'>" + snapshot.val().label4 + "</p>");
+// }
+// });
 
 //If you click a word to learn the rest disappear
 var currentWord="";
@@ -117,40 +114,46 @@ var currentWord="";
 $("#word1").on("click", function(){
 	$("#word2,#word3,#word4").addClass("slideOutLeft");
 	$("#word2,#word3,#word4").hide(2000);
-	$("#chosenWord").html("You just leaned a new word!");
+	$("#chooseWord").hide();
 	$("#spanishWord").show();
+	$("#learnedWord").show();
+	$("#again").css("display","block");
 	currentWord=$("#w1selected").html();
 });
 $("#word2").on("click", function(){
 	$("#word1,#word3,#word4").addClass("slideOutLeft");
 	$("#word1,#word3,#word4").hide(2000);
-	$("#chosenWord").html("You just leaned a new word!");
+	$("#chooseWord").hide();
 	$("#spanishWord").show();
+	$("#learnedWord").show();
+	$("#again").css("display","block");
 	currentWord=$("#w2selected").html();
 });
 $("#word3").on("click", function(){
 	$("#word2,#word1,#word4").addClass("slideOutLeft");
 	$("#word2,#word1,#word4").hide(2000);
-	$("#chosenWord").html("You just leaned a new word!");
+	$("#chooseWord").hide();
 	$("#spanishWord").show();
+	$("#learnedWord").show();
+	$("#again").css("display","block");
 	currentWord=$("#w3selected").html();
 });
 $("#word4").on("click", function(){
 	$("#word2,#word3,#word1").addClass("slideOutLeft");
 	$("#word2,#word3,#word1").hide(2000);
-	$("#chosenWord").html("You just leaned a new word!");
+	$("#chooseWord").hide();
 	$("#spanishWord").show();
+	$("#learnedWord").show();
+	$("#again").css("display", "block");
 	currentWord=$("#w4selected").html();
 });
 
-//translator call and eender text
-//https://translate.yandex.net/api/v1.5/tr.json/translate ? 
-            //key=<API key>
-            //& text=<text to translate>
-            //& lang=<translation direction>
-            //& [format=<text format>]
-            //& [options=<translation options>]
-            //& [callback=<name of the callback function>]
+$("#again").on("click",function(){
+	photoReset();
+});
+
+
+//Translate word and Text to Speech
 $(document).on('click', '.card-block', function(){
 //toTrans = $(this).text());
             var toTrans = currentWord;//This is for testing
@@ -187,4 +190,10 @@ function photoReset(){
 	$("#screen2text").css("display", "inline-block");
 	$("#screen2text").addClass("bounceIn");
 	$("#hi").text("Hello, " + name);
+	$("#spanishWord").hide();
+	$("#learnedWord").hide();
+	$("#again").hide();
+	$("#image").css("background-image","");
+	$(".screen3").hide();
+	urlI=" ";
 }
