@@ -1,14 +1,14 @@
-// var config = {
-//     apiKey: "AIzaSyAUhckuI7eonmR3kNmUC3vBOrnoz2NLscY",
-//     authDomain: "yeah-8ac6b.firebaseapp.com",
-//     databaseURL: "https://yeah-8ac6b.firebaseio.com/",
-//     projectId: "yeah-8ac6b",
-//     storageBucket: "yeah-8ac6b.appspot.com",
-//     messagingSenderId: "1051077492767"
-//   };
-//   var dataInt = firebase.initializeApp(config);
-//   var database = firebase.database();
-//   var app = firebase.initializeApp(config, "app");
+var config = {
+    apiKey: "AIzaSyAUhckuI7eonmR3kNmUC3vBOrnoz2NLscY",
+    authDomain: "yeah-8ac6b.firebaseapp.com",
+    databaseURL: "https://yeah-8ac6b.firebaseio.com/",
+    projectId: "yeah-8ac6b",
+    storageBucket: "yeah-8ac6b.appspot.com",
+    messagingSenderId: "1051077492767"
+  };
+  var dataInt = firebase.initializeApp(config);
+  var database = firebase.database();
+  var app = firebase.initializeApp(config, "app");
 
 
 //NAVBAR
@@ -45,11 +45,26 @@ function htmlbodyHeightUpdate(){
 	});
 
 
+	var name;
+
+var avatar;
+function writeUserData(name, avatar) {
+  firebase.database().ref('users/' + name + avatar).set({
+    label1:"loading",
+    label2:"loading",
+    label3:"loading",
+    label4:"loading"
+  });
+}
+
+
+
+
 
 //First screen on click
 $("#go").on("click", function(){
 	//Save the name feild to firebase
-	var name = $("#name").val();  //////////////Save Variable in firebase!
+	name = $("#name").val();  //////////////Save Variable in firebase!
 	$(".screen1").addClass("rotateOutUpRight");
 	$(".screen1").removeClass("fadeIn");
 	$(".name").hide(2000);
@@ -61,6 +76,32 @@ $("#go").on("click", function(){
 	$("#screen2text").css("display", "inline-block");
 	$("#screen2text").addClass("bounceIn");
 	$("#hi").text("Hello, " + name);
+
+
+
+
+
+avatar = "piggy"
+writeUserData(name,avatar)
+// database.ref('users/' + name + avatar).set(null);
+database.ref('users/' + name + avatar).on("value", function(snapshot) {
+console.log(name + avatar)
+console.log("snapshot.val().label1 " + snapshot.val().label1)
+console.log("snapshot" + snapshot)
+console.log("snapshot.val() " + snapshot.val() )
+    // if (snapshot.val() !== null){
+    $("#w1selected").html("<p id='w1selected' class='white-text'>" + snapshot.val().label1 + "</p>");
+    $("#w2selected").html("<p id='w2selected' class='white-text'>" + snapshot.val().label2 + "</p>");
+    $("#w3selected").html("<p id='w3selected' class='white-text'>" + snapshot.val().label3 + "</p>");
+    $("#w4selected").html("<p id='w4selected' class='white-text'>" + snapshot.val().label4 + "</p>");
+});
+// });
+
+
+
+
+
+
 });
 
 
@@ -80,8 +121,8 @@ document.getElementById('file-input').addEventListener('change', readURL, true);
 function readURL(){
     var file = document.getElementById("file-input").files[0];
     var uploader = document.getElementById("file-input");
-    // var storageRef = firebase.storage(app).ref(file.name);
-    // storageRef.put(file);
+    var storageRef = firebase.storage(app).ref(name + avatar + "-" + file.name);
+    storageRef.put(file);
 
     var reader = new FileReader();
     reader.onloadend = function(){
@@ -95,18 +136,6 @@ function readURL(){
 }
 
 
-// database.ref().set(null);
-
-
-
-// database.ref().on("value", function(snapshot) {
-// if (snapshot.val() !== null){
-// $("#w1selected").html("<p id='w1selected' class='white-text'>" + snapshot.val().label1 + "</p>");
-// $("#w2selected").html("<p id='w2selected' class='white-text'>" + snapshot.val().label2 + "</p>");
-// $("#w3selected").html("<p id='w3selected' class='white-text'>" + snapshot.val().label3 + "</p>");
-// $("#w4selected").html("<p id='w4selected' class='white-text'>" + snapshot.val().label4 + "</p>");
-// }
-// });
 
 //If you click a word to learn the rest disappear
 var currentWord="";
@@ -150,6 +179,13 @@ $("#word4").on("click", function(){
 
 $("#again").on("click",function(){
 	photoReset();
+	firebase.database().ref('users/' + name + avatar).set({
+    label1:"loading",
+    label2:"loading",
+    label3:"loading",
+    label4:"loading"
+  });
+
 });
 
 

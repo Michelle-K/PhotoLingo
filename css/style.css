@@ -1,5 +1,8 @@
 /* YOUR CUSTOM STYLES */
-
+body, html { 
+    overflow: hidden; 
+    
+}
 body{
 	height: 100%;
 	width: 100%;
@@ -13,9 +16,7 @@ body{
 }
 
 
-.screen0{
-	display:none;
-}
+
 /*Name*/
 h1{
 	color: #446C7D;
@@ -94,9 +95,9 @@ div .screen2.box{
 	height: 100%;
 	width:100%;
 }
-#hi{
+/*#hi{
 	margin:10%;
-}
+}*/
 #timHiBubble{
 	width: 90%;
 }
@@ -104,6 +105,7 @@ div .screen2.box{
 	height: 30%;
 	display: none;
 	clear:left;
+	padding-left: 3%;
 }
  .image-upload{
  	float: right;
@@ -112,8 +114,8 @@ div .screen2.box{
 
 #camera{
 	display:none;
-	height: 150px; 
-	width: 150px;
+	height: 70%; 
+	width: 70%;
 	float: right;
 }
 
@@ -128,10 +130,18 @@ h3{
 	color: #446C7D;
 	font-family: 'Ubuntu', sans-serif;
 	text-align: center;
-	padding-left: 5%;
-	padding-right: 5%;
+	margin-top: 10%;
+	margin-bottom: 10%;
+	/*padding-left: 5%;
+	padding-right: 5%;*/
 		
 }
+
+h2 {
+	color: #446C7D;
+	font-family: 'Ubuntu', sans-serif;
+ }
+
 #screen2{
 	display: none;
 	height: 100%;
@@ -166,10 +176,11 @@ h3{
 
 /*Screen 3*/
 #image{
-    background-image:url('');
-    background-size:cover;
+    background-image: url('');
+    background-size: contain;
+    background-repeat: no-repeat;
     background-position: center;
-    height: 250px; width: 250px;
+    height: 50%; width: 50%;
     border: 1px solid #bbb;
     width: 100%;
    /* transform: rotate(90deg);
@@ -177,22 +188,28 @@ h3{
   	-ms-transform: rotate(90deg);*/
 }
 
-
 .screen3{
 	display: none;
 }
+
 .card-block{
 	padding:.6rem;
 }
+
 .card-block p{
 	margin-bottom: .5rem;
 }
+
 #chooseWord{
 	text-align: center;
 	color: #446C7D;
 	font-family: 'Ubuntu', sans-serif;
 	font-size: 2rem;
+	margin-top: 2%;
+	padding-left: 2%;
+	padding-right: 2%;
 }
+
 #learnedWord{
 	display: none;
 	text-align: center;
@@ -326,7 +343,216 @@ h3{
 		min-height: 100%;
 	}
 
-	@media (min-width: 768px) {
+/*-----------AVATAR SCREEN 0------------*/
+	.avatar {
+    width: 27%;
+    margin: 3% !important;
+    object-fit: contain;
+	}
+	/*.row{
+    height: 100%;
+    text-align: center;
+    margin: 0 0;
+	}*/
+	.col-xs-12{
+    text-align: center;
+    width: 100%;
+}
+h4{
+    color: #446C7D;
+	font-family: 'Ubuntu', sans-serif;
+    font-size: 2rem;
+    margin-top: 10%;
+    text-align: center;
+
+}
+/*img {
+    margin: 0 !important;
+}
+
+/*img{border:solid 1px red; margin:10px;}*/
+.selected{
+   box-shadow:0px 12px 22px 1px #333;
+}
+#selectButton {
+	margin: 0 auto;
+	width: 60%; 
+	height: 30%;
+}
+.btn {
+    font-size: .8rem;
+    padding: .85rem 2.13rem;
+     border-radius: 2px; 
+    border: 0;
+    color: #fff!important;
+    margin: 0 auto; 
+    white-space: normal!important;
+}
+	
+		/* -----------------  PC SCREEN  -------------*/
+	@media (min-width: 1200px) {
+		#timHiBubble {
+    		width: 30%;
+	}
+
+		h1 {
+    	font-size: 2rem;
+    	margin-top: 5%;
+	}
+
+		.h3, h3 {
+    	font-size: 3.5rem;
+    	margin-top: 3rem;
+    	margin-bottom: 3rem;
+    	width: 100%;
+    	text-align: center;
+	}
+
+	 h2 {
+	font-size: 2rem;
+	color: #446C7D;
+	font-family: 'Ubuntu', sans-serif;
+ 	}
+
+		#camera {
+    	display: center;
+    	height: 70%;
+    	width: 70%;
+    	margin-right: 80%;
+
+
+	}
+
+		#timArrow {
+    	height: 70%;
+    	margin-left: 10%;
+    	margin-right: 10%;
+    	display: none;
+    	}
+
+		#screen2text {
+    	display: none;
+    	float: right;
+    	width: 30%;
+	}
+	div#timArrowDiv.screen2 {
+		width: 50%;
+		height: 70%;
+		margin: 0;
+		margin-left: 20%;
+	}
+	
+		#hi {
+    	margin: 5%;
+	}
+
+		#screen2 {
+    	display: none;
+    	height: 80%;
+    	width: 100%;
+	}
+
+		#timArrowDiv {
+    	height: 70%;
+    	width: 50%;
+    	/*margin: 0 auto;
+    	/*clear: both;*/
+    	/*padding-top: 10%;*/
+	}
+	div#image.screen3{
+		width: 100%;
+		height: 65%;
+	}
+	div.card-block{
+		width: 100%;
+	}
+	div.card-block{
+	/*padding:.6rem;*/
+	padding: 0;
+
+/*}
+.avatar {
+    width: 30%;
+    margin: 4%;
+    object-fit: contain;
+	}
+	.row{
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    margin: 0 0;
+	}
+ 
+}*/
+
+					
+
+			
+				/*----------TABLET SCREEN --------*/
+@media screen and (min-width: 768px){
+.mb-2, .my-2 {
+     margin-bottom: 0!important; 
+}
+	h1 {
+    	font-size: 2rem;
+    	margin-top: 5%;
+    	margin-bottom: 0;
+    	padding-top: 5%;
+	}
+	div.md-form.name{
+		margin-bottom: 10%;
+	}
+
+	h3 {
+		font-size: 3rem;
+	}
+	/*h2 {
+		padding-right: 3%;
+	}*/
+	div#timArrowDiv {
+    /*padding-top: 50px;*/
+    padding-left: 10%;
+    padding-right: 15%;
+}
+
+ #camera{
+	margin-right: 30%;
+	}
+
+	#image {
+
+    height: 60%;
+    width: 50%;
+    border: 1px solid #bbb;
+    width: 100%;
+}
+
+	/*Avatar tablet*/
+	/*.row{
+		width: 100%; 
+		padding-left: 3%;
+	}*/
+
+.avatar {
+    width: 24%;
+    margin: 4%;
+    object-fit: contain;
+	}
+
+h4{
+    font-size: 3rem;
+    margin-top: 3%;
+}
+#selectButton {
+	margin-bottom: 3%;
+	
+
+}
+div#selectButton.row.animated.screen0{
+	padding: 0;
+}
+
+	/*/*@media (min-width: 768px) {
 		.navbar-minimal.open {
 			width: 300px;
 		}
@@ -347,7 +573,9 @@ h3{
 			background-color: rgb(51, 51, 51);
 			background-color: rgba(51, 51, 51, 0.8);
 			opacity: 0;
-		}
+		}*/
 	
-	}
+	/*}*/
 /*END NAVBAR */
+
+	
