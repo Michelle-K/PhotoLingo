@@ -99,7 +99,7 @@ div .screen2.box{
 	margin:10%;
 }*/
 #timHiBubble{
-	width: 90%;
+	width: 100%;
 }
 #timArrow{
 	height: 30%;
@@ -109,13 +109,13 @@ div .screen2.box{
 }
  .image-upload{
  	float: right;
- 	margin-right: 25%;
+ 	margin-right: 30%;
  }
 
 #camera{
 	display:none;
-	height: 70%; 
-	width: 70%;
+	height: 90%; 
+	width: 90%;
 	float: right;
 }
 
@@ -151,6 +151,7 @@ h2 {
 	display: none;
 	float:right;
 	width: 160px;
+	margin-right: 5px;
 }
 
 .image-upload > input
