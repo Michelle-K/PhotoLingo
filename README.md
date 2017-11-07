@@ -1,4 +1,4 @@
-# spanishGame
+# PhotoLingo
 
 
 ![Preview](/RPscreen1.gif)
